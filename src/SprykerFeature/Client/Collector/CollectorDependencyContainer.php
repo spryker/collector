@@ -4,14 +4,14 @@
  * (c) Spryker Systems GmbH copyright protected
  */
 
-namespace SprykerFeature\Client\Collector\Service;
+namespace SprykerFeature\Client\Collector;
 
-use SprykerEngine\Client\Kernel\Service\AbstractServiceDependencyContainer;
-use SprykerFeature\Client\Collector\Service\KeyBuilder\UrlKeyBuilder;
-use SprykerFeature\Client\Collector\Service\Matcher\UrlMatcher;
-use SprykerFeature\Client\Storage\Service\StorageClient;
+use SprykerEngine\Client\Kernel\AbstractDependencyContainer;
+use SprykerFeature\Client\Collector\KeyBuilder\UrlKeyBuilder;
+use SprykerFeature\Client\Collector\Matcher\UrlMatcher;
+use SprykerFeature\Client\Storage\StorageClient;
 
-class CollectorDependencyContainer extends AbstractServiceDependencyContainer
+class CollectorDependencyContainer extends AbstractDependencyContainer
 {
 
     /**
