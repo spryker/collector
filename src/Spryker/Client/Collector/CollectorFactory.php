@@ -11,7 +11,7 @@ use Spryker\Client\Collector\KeyBuilder\UrlKeyBuilder;
 use Spryker\Client\Collector\Matcher\UrlMatcher;
 use Spryker\Client\Storage\StorageClient;
 
-class CollectorDependencyContainer extends AbstractFactory
+class CollectorFactory extends AbstractFactory
 {
 
     /**

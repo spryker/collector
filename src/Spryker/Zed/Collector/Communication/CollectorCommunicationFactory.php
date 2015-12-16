@@ -11,7 +11,7 @@ use Spryker\Zed\Collector\CollectorDependencyProvider;
 use Spryker\Zed\Installer\Business\Model\AbstractInstaller;
 use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
 
-class CollectorDependencyContainer extends AbstractCommunicationFactory
+class CollectorCommunicationFactory extends AbstractCommunicationFactory
 {
 
     /**

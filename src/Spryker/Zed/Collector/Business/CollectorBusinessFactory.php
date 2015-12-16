@@ -39,7 +39,7 @@ use Spryker\Shared\Kernel\Messenger\MessengerInterface;
 /**
  * @method CollectorConfig getConfig()
  */
-class CollectorDependencyContainer extends AbstractBusinessFactory
+class CollectorBusinessFactory extends AbstractBusinessFactory
 {
 
     /**
