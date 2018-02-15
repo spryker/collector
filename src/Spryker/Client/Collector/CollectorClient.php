@@ -14,6 +14,8 @@ use Spryker\Client\Kernel\AbstractClient;
  * @todo Rename all YvesExport Bundles to PageExport or just Export.
  *
  * @method \Spryker\Client\Collector\CollectorFactory getFactory()
+ *
+ * @deprecated use \Spryker\Client\Url\UrlClient
  */
 class CollectorClient extends AbstractClient implements UrlMatcherInterface, CollectorClientInterface
 {
@@ -21,6 +23,8 @@ class CollectorClient extends AbstractClient implements UrlMatcherInterface, Col
      * {@inheritdoc}
      *
      * @api
+     *
+     * @deprecated use \Spryker\Client\Url\UrlClient
      *
      * @param string $url
      * @param string $localeName
