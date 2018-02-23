@@ -17,4 +17,12 @@ interface CollectorConstants
     const ZED_DB_ENGINE = PropelConstants::ZED_DB_ENGINE;
     const ZED_DB_ENGINE_MYSQL = PropelConstants::ZED_DB_ENGINE_MYSQL;
     const ZED_DB_ENGINE_PGSQL = PropelConstants::ZED_DB_ENGINE_PGSQL;
+
+    /**
+     * Specification:
+     * - Activate the deleted touch records cleanup
+     *
+     * @api
+     */
+    const TOUCH_DELETE_CLEANUP_ACTIVE = 'COLLECTOR:TOUCH_DELETE_CLEANUP_ACTIVE';
 }
