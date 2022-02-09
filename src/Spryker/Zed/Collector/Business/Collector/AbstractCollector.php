@@ -95,9 +95,7 @@ abstract class AbstractCollector
     {
         if ($this->currentStoreBuffer === null) {
             // Deprecated: inject StoreFacade through constructor
-            /** @var \Generated\Zed\Ide\AutoCompletion&\Spryker\Shared\Kernel\LocatorLocatorInterface $locator */
-            $locator = Locator::getInstance();
-            $this->currentStoreBuffer = $locator->store()->facade()->getCurrentStore();
+            $this->currentStoreBuffer = Locator::getInstance()->store()->facade()->getCurrentStore();
         }
 
         return $this->currentStoreBuffer;
@@ -285,7 +283,6 @@ abstract class AbstractCollector
 
         $statement->execute($sqlParams);
 
-        /** @phpstan-var array<\Orm\Zed\Touch\Persistence\SpyTouch> */
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 

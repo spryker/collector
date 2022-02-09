@@ -17,7 +17,7 @@ interface ReadInterface
     public function get($key);
 
     /**
-     * @param array<string> $keys
+     * @param array $keys
      *
      * @return array
      */

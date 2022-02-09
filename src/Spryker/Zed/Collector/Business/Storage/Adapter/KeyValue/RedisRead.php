@@ -36,7 +36,7 @@ class RedisRead extends Redis implements ReadInterface
     }
 
     /**
-     * @param array<string> $keys
+     * @param array $keys
      * @param string $prefix
      *
      * @return array
@@ -48,7 +48,6 @@ class RedisRead extends Redis implements ReadInterface
             $transformedKeys[] = $this->getKeyName($key, $prefix);
         }
 
-        /** @var array $values */
         $values = array_combine($transformedKeys, $this->getResource()->mget($transformedKeys));
         $this->addMultiReadAccessStats($keys);
 
