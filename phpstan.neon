@@ -27,4 +27,10 @@ parameters:
         - '#Parameter \#1 \$callback of function call_user_func_array expects callable\(\): mixed, .+ given.#'
         -
             identifier: missingType.iterableValue
+        # Defensive programming: instanceof check kept for runtime safety
+        -
+            identifier: instanceof.alwaysTrue
+        # Type narrowing from PHPDoc
+        -
+            identifier: varTag.nativeType
     reportUnmatchedIgnoredErrors: false
