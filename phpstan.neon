@@ -30,7 +30,4 @@ parameters:
         # Defensive programming: instanceof check kept for runtime safety
         -
             identifier: instanceof.alwaysTrue
-        # Type narrowing from PHPDoc
-        -
-            identifier: varTag.nativeType
     reportUnmatchedIgnoredErrors: false
