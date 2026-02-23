@@ -9,7 +9,6 @@ namespace SprykerTest\Zed\Collector\Business\Collector;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\LocaleTransfer;
-use Spryker\Zed\Collector\Business\Collector\AbstractDatabaseCollector;
 use Spryker\Zed\Collector\Business\Exporter\Reader\Storage\RedisReader;
 use Spryker\Zed\Collector\Business\Exporter\Writer\AbstractTouchUpdater;
 use Spryker\Zed\Collector\Business\Exporter\Writer\Storage\RedisWriter;
@@ -17,6 +16,7 @@ use Spryker\Zed\Collector\Business\Model\BatchResult;
 use Spryker\Zed\Collector\CollectorConfig;
 use Spryker\Zed\Touch\Persistence\TouchQueryContainer;
 use SprykerTest\Zed\Collector\Business\ArrayBatchIterator;
+use SprykerTest\Zed\Collector\TestableAbstractDatabaseCollector;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\NullOutput;
 
@@ -111,10 +111,16 @@ class AbstractDatabaseCollectorTest extends Unit
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->abstractDatabaseCollectorMock = $this
-            ->getMockBuilder(AbstractDatabaseCollector::class)
-            ->onlyMethods(['startProgressBar', 'isStorable', 'collectKey', 'processCollectedItem'])
-            ->getMockForAbstractClass();
+        // Create a test double that can override protected methods like startProgressBar
+        $this->abstractDatabaseCollectorMock = $this->getMockBuilder(TestableAbstractDatabaseCollector::class)
+            ->onlyMethods([
+                'startProgressBar',
+                'isStorable',
+                'collectKey',
+                'processCollectedItem',
+            ])
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $this->abstractDatabaseCollectorMock->setTouchQueryContainer($this->touchQueryContainerMock);
 

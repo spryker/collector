@@ -186,7 +186,9 @@ class AbstractTouchUpdaterTest extends Unit
      */
     protected function createConnectionMock(): ConnectionInterface
     {
-        return $this->getMockForAbstractClass(ConnectionInterface::class, [], '', true, true, true, ['exec']);
+        // Use createMock to provide a mock implementing ConnectionInterface
+        // Tests may set expectations on `exec()` on this mock
+        return $this->createMock(ConnectionInterface::class);
     }
 
     /**
