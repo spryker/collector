@@ -44,13 +44,6 @@ class CollectorExporter
      */
     protected $collectorConfig;
 
-    /**
-     * @param \Spryker\Zed\Touch\Persistence\TouchQueryContainerInterface $touchQueryContainer
-     * @param \Spryker\Zed\Collector\Dependency\Facade\CollectorToLocaleInterface $localeFacade
-     * @param \Spryker\Zed\Collector\Business\Exporter\ExporterInterface $exporter
-     * @param \Spryker\Zed\Collector\CollectorConfig $collectorConfig
-     * @param \Spryker\Zed\Collector\Dependency\Facade\CollectorToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         TouchQueryContainerInterface $touchQueryContainer,
         CollectorToLocaleInterface $localeFacade,

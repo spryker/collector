@@ -29,14 +29,6 @@ class CollectorDataHelper extends Module
 {
     use LocatorHelperTrait;
 
-    /**
-     * @param \Spryker\Zed\Kernel\Business\AbstractFacade $facade
-     * @param string $facadeCollectorMethod
-     * @param string $resourceType
-     * @param \DateTime $lastTouchedAt
-     *
-     * @return array
-     */
     public function runCollector(
         AbstractFacade $facade,
         string $facadeCollectorMethod,
@@ -73,45 +65,26 @@ class CollectorDataHelper extends Module
         return $collectedData;
     }
 
-    /**
-     * @return \Spryker\Zed\Locale\Business\LocaleFacadeInterface
-     */
     public function getLocaleFacade(): LocaleFacadeInterface
     {
         return $this->getLocator()->locale()->facade();
     }
 
-    /**
-     * @return \Spryker\Zed\Touch\Persistence\TouchQueryContainerInterface
-     */
     public function getTouchQueryContainer(): TouchQueryContainerInterface
     {
         return $this->getLocator()->touch()->queryContainer();
     }
 
-    /**
-     * @return \Spryker\Zed\Collector\Business\Exporter\Reader\ReaderInterface
-     */
     protected function getDataReaderMock(): ReaderInterface
     {
         return Stub::constructEmpty(ReaderInterface::class);
     }
 
-    /**
-     * @return \Spryker\Zed\Collector\Business\Exporter\Writer\TouchUpdaterInterface
-     */
     protected function getTouchUpdaterMock(): TouchUpdaterInterface
     {
         return Stub::constructEmpty(TouchUpdaterInterface::class);
     }
 
-    /**
-     * @param string $resourceType
-     * @param \Generated\Shared\Transfer\LocaleTransfer $localeTransfer
-     * @param \DateTime $lastTouchedAt
-     *
-     * @return \Propel\Runtime\ActiveQuery\ModelCriteria
-     */
     protected function createTouchBaseQuery(string $resourceType, LocaleTransfer $localeTransfer, DateTime $lastTouchedAt): ModelCriteria
     {
         return $this->getTouchQueryContainer()
@@ -125,17 +98,11 @@ class CollectorDataHelper extends Module
             ->setFormatter(new PropelArraySetFormatter());
     }
 
-    /**
-     * @return \Symfony\Component\Console\Output\NullOutput
-     */
     protected function createNullOutput(): NullOutput
     {
         return new NullOutput();
     }
 
-    /**
-     * @return \Spryker\Zed\Collector\Business\Model\BatchResult
-     */
     protected function createBatchResult(): BatchResult
     {
         return new BatchResult();

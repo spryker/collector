@@ -25,9 +25,6 @@ class CollectorManager implements CollectorManagerInterface
      */
     protected $collectorConfig;
 
-    /**
-     * @param \Spryker\Zed\Collector\CollectorConfig $collectorConfig
-     */
     public function __construct(CollectorConfig $collectorConfig)
     {
         $this->collectorConfig = $collectorConfig;

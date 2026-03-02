@@ -25,10 +25,6 @@ class UrlMatcher implements UrlMatcherInterface
      */
     protected $keyValueReader;
 
-    /**
-     * @param \Spryker\Shared\KeyBuilder\KeyBuilderInterface $urlKeyBuilder
-     * @param \Spryker\Client\Storage\StorageClientInterface $keyValueReader
-     */
     public function __construct(KeyBuilderInterface $urlKeyBuilder, StorageClientInterface $keyValueReader)
     {
         $this->urlKeyBuilder = $urlKeyBuilder;

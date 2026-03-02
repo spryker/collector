@@ -26,9 +26,6 @@ class CollectorStorageExportConsole extends AbstractCollectorConsole
      */
     public const COMMAND_DESCRIPTION = 'Collector export storage';
 
-    /**
-     * @return void
-     */
     protected function configure(): void
     {
         $this->setName(static::COMMAND_NAME);
@@ -37,12 +34,6 @@ class CollectorStorageExportConsole extends AbstractCollectorConsole
         parent::configure();
     }
 
-    /**
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
-     *
-     * @return int
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $enabledCollectors = $this->getFacade()->getEnabledCollectorTypes();

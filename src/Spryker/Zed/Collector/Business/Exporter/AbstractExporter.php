@@ -63,15 +63,6 @@ abstract class AbstractExporter implements ExporterInterface
      */
     protected $queryContainer;
 
-    /**
-     * @param \Spryker\Zed\Touch\Persistence\TouchQueryContainerInterface $queryContainer
-     * @param \Spryker\Zed\Collector\Business\Exporter\Reader\ReaderInterface $reader
-     * @param \Spryker\Zed\Collector\Business\Exporter\Writer\WriterInterface $writer
-     * @param \Spryker\Zed\Collector\Business\Exporter\MarkerInterface $marker
-     * @param \Spryker\Zed\Collector\Business\Model\FailedResultInterface $failedResultPrototype
-     * @param \Spryker\Zed\Collector\Business\Model\BatchResultInterface $batchResultPrototype
-     * @param \Spryker\Zed\Collector\Business\Exporter\Writer\TouchUpdaterInterface $touchUpdater
-     */
     public function __construct(
         TouchQueryContainerInterface $queryContainer,
         ReaderInterface $reader,

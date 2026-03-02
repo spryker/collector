@@ -24,10 +24,6 @@ class TypeAwareIndexAdapter implements IndexAdapterInterface
      */
     protected $searchCollectorConfigurationTransfer;
 
-    /**
-     * @param \Elastica\Client $elasticaClient
-     * @param \Generated\Shared\Transfer\SearchCollectorConfigurationTransfer $searchCollectorConfigurationTransfer
-     */
     public function __construct(Client $elasticaClient, SearchCollectorConfigurationTransfer $searchCollectorConfigurationTransfer)
     {
         $this->elasticaIndex = $elasticaClient->getIndex($searchCollectorConfigurationTransfer->getIndexName());
@@ -57,9 +53,6 @@ class TypeAwareIndexAdapter implements IndexAdapterInterface
         return $this->getType()->addDocuments($documents, $options);
     }
 
-    /**
-     * @return array
-     */
     public function getMapping(): array
     {
         $mappingType = $this->getType();
@@ -86,9 +79,6 @@ class TypeAwareIndexAdapter implements IndexAdapterInterface
         return $result;
     }
 
-    /**
-     * @return \Elastica\Type
-     */
     protected function getType(): Type
     {
         return $this->elasticaIndex->getType(

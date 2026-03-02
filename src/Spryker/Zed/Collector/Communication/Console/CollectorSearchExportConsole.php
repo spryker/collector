@@ -26,9 +26,6 @@ class CollectorSearchExportConsole extends AbstractCollectorConsole
      */
     public const COMMAND_DESCRIPTION = 'Collector export search';
 
-    /**
-     * @return void
-     */
     protected function configure(): void
     {
         $this->setName(static::COMMAND_NAME);
@@ -37,12 +34,6 @@ class CollectorSearchExportConsole extends AbstractCollectorConsole
         parent::configure();
     }
 
-    /**
-     * @param \Symfony\Component\Console\Input\InputInterface $input
-     * @param \Symfony\Component\Console\Output\OutputInterface $output
-     *
-     * @return int
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $exportResults = $this->getFacade()->exportSearch($output);

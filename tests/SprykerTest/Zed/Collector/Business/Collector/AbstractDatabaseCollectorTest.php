@@ -130,9 +130,6 @@ class AbstractDatabaseCollectorTest extends Unit
             ->willReturn($this->progressBarHelper);
     }
 
-    /**
-     * @return void
-     */
     public function testExportDataToStoreWritesStorableData(): void
     {
         if ($this->tester->isDynamicStoreEnabled()) {
@@ -190,9 +187,6 @@ class AbstractDatabaseCollectorTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExportDataToStoreDeletesNotStorableData(): void
     {
         // Assign

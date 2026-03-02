@@ -27,8 +27,5 @@ interface IndexAdapterInterface
      */
     public function addDocuments(array $documents, array $options = []);
 
-    /**
-     * @return array
-     */
     public function getMapping(): array;
 }

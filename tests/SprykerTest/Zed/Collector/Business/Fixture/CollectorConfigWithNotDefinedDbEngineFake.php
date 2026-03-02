@@ -21,9 +21,6 @@ class CollectorConfigWithNotDefinedDbEngineFake extends CollectorConfig
      */
     public const COLLECTOR_BULK_UPDATE_QUERY_CLASS = 'WrongBulkUpdateTouchKeyByIdQuery';
 
-    /**
-     * @return string
-     */
     public function getCurrentEngineName(): string
     {
         return $this->getMysqlEngineName();

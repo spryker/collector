@@ -349,17 +349,11 @@ class CollectorBusinessFactory extends AbstractBusinessFactory
         return new CollectorManager($this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Zed\Collector\Business\Index\IndexFactoryInterface
-     */
     public function createIndexFactory(): IndexFactoryInterface
     {
         return new IndexFactory();
     }
 
-    /**
-     * @return \Spryker\Zed\Collector\Business\Mapping\MappingFactoryInterface
-     */
     public function createMappingFactory(): MappingFactoryInterface
     {
         return new MappingFactory();

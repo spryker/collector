@@ -51,9 +51,6 @@ class ElasticsearchWriterTest extends Unit
      */
     protected $indexFactory;
 
-    /**
-     * @return void
-     */
     public function testWriteCreateDocumentsWithValidDataSet(): void
     {
         $dataSet = $this->getValidTestDataSet();
@@ -61,9 +58,6 @@ class ElasticsearchWriterTest extends Unit
         $this->assertTrue($writer->write($dataSet));
     }
 
-    /**
-     * @return void
-     */
     public function testWriteCreateDocumentsWithInValidDataSet(): void
     {
         $this->expectException(InvalidDataSetException::class);
@@ -74,9 +68,6 @@ class ElasticsearchWriterTest extends Unit
         $this->expectException(InvalidDataSetException::class);
     }
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         $this->skipIfElasticsearch7();
@@ -113,9 +104,6 @@ class ElasticsearchWriterTest extends Unit
         return ['value1', 'value2'];
     }
 
-    /**
-     * @return \Spryker\Zed\Collector\Business\Exporter\Writer\Search\ElasticsearchWriter
-     */
     protected function getElasticsearchWriter(): ElasticsearchWriter
     {
         return new ElasticsearchWriter($this->client, '', '', $this->indexFactory);
@@ -192,9 +180,6 @@ class ElasticsearchWriterTest extends Unit
         return $mockResponse;
     }
 
-    /**
-     * @return void
-     */
     protected function skipIfElasticsearch7(): void
     {
         if (!method_exists(Index::class, 'getType')) {

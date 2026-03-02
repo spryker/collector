@@ -48,13 +48,6 @@ class ExportMarker implements MarkerInterface
      */
     protected $storeFacade;
 
-    /**
-     * @param \Spryker\Zed\Collector\Business\Exporter\Writer\WriterInterface $writer
-     * @param \Spryker\Zed\Collector\Business\Exporter\Reader\ReaderInterface $reader
-     * @param \Spryker\Shared\KeyBuilder\KeyBuilderInterface $keyBuilder
-     * @param \Spryker\Zed\Collector\CollectorConfig $collectorConfig
-     * @param \Spryker\Zed\Collector\Dependency\Facade\CollectorToStoreFacadeInterface $storeFacade
-     */
     public function __construct(
         WriterInterface $writer,
         ReaderInterface $reader,

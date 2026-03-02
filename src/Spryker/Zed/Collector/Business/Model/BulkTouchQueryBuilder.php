@@ -17,9 +17,6 @@ class BulkTouchQueryBuilder
      */
     protected $config;
 
-    /**
-     * @param \Spryker\Zed\Collector\CollectorConfig $config
-     */
     public function __construct(CollectorConfig $config)
     {
         $this->config = $config;

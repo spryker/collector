@@ -33,9 +33,6 @@ abstract class AbstractPdoCollector extends AbstractDatabaseCollector
      */
     protected $utilDataReaderService;
 
-    /**
-     * @param \Spryker\Service\UtilDataReader\UtilDataReaderServiceInterface $utilDataReaderService
-     */
     public function __construct(UtilDataReaderServiceInterface $utilDataReaderService)
     {
         $this->utilDataReaderService = $utilDataReaderService;

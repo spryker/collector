@@ -22,9 +22,6 @@ class RedisReader implements ReaderInterface
      */
     protected $redis;
 
-    /**
-     * @param \Spryker\Zed\Collector\Business\Storage\Adapter\KeyValue\ReadInterface $redis
-     */
     public function __construct(ReadInterface $redis)
     {
         $this->redis = $redis;

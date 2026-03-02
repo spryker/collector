@@ -33,11 +33,6 @@ class TypelessMappingAdapter implements MappingAdapterInterface
      */
     protected $elasticaClient;
 
-    /**
-     * @param \Elastica\Client $elasticaClient
-     * @param \Generated\Shared\Transfer\SearchCollectorConfigurationTransfer $searchCollectorConfigurationTransfer
-     * @param array $mappingProperties
-     */
     public function __construct(
         Client $elasticaClient,
         SearchCollectorConfigurationTransfer $searchCollectorConfigurationTransfer,
@@ -48,9 +43,6 @@ class TypelessMappingAdapter implements MappingAdapterInterface
         $this->elasticaMapping = new Mapping($mappingProperties);
     }
 
-    /**
-     * @return \Elastica\Response
-     */
     public function send(): Response
     {
         return $this->elasticaMapping->send($this->getIndex());
@@ -73,9 +65,6 @@ class TypelessMappingAdapter implements MappingAdapterInterface
         return $result;
     }
 
-    /**
-     * @return \Elastica\Index
-     */
     protected function getIndex(): Index
     {
         return $this->elasticaClient->getIndex(

@@ -14,8 +14,5 @@ use Elastica\Response;
  */
 interface MappingAdapterInterface
 {
-    /**
-     * @return \Elastica\Response
-     */
     public function send(): Response;
 }
