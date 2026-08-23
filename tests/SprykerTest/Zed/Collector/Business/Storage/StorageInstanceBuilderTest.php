@@ -95,9 +95,7 @@ class StorageInstanceBuilderTest extends Unit
         [$transport, $port, $host] = $expectedInstanceConfiguration;
 
         $searchInstances = (new ReflectionClass(new StorageInstanceBuilder()))->getProperty('searchInstances');
-        $searchInstances->setAccessible(true);
         $searchInstances->setValue([]);
-        $searchInstances->setAccessible(false);
 
         // Act
         $elasticsearchInstanceConfig = StorageInstanceBuilder::getElasticsearchInstance()->getConfig();
